@@ -3,13 +3,13 @@ package main
 import (
 	chckr "github.com/telepenin/website-checker/checker/checker"
 	"github.com/telepenin/website-checker/checker/listener"
-	config "github.com/telepenin/website-checker/config/src"
+	"github.com/telepenin/website-checker/shared"
 	"log"
 )
 
 func main() {
 
-	cfg, err := config.FromEnv("CONFIG")
+	cfg, err := shared.ConfigFromEnv("CONFIG")
 	if err != nil {
 		log.Fatal(err)
 	}
