@@ -12,3 +12,9 @@ type Response struct {
 func (r *Response) ToJson() ([]byte, error) {
 	return json.Marshal(r)
 }
+
+func FromJson(data []byte) (*Response, error) {
+	resp := new(Response)
+	err := json.Unmarshal(data, resp)
+	return resp, err
+}
