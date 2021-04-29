@@ -1,0 +1,18 @@
+
+checker:
+  interval: 10
+  timeout: 2
+
+  websites:
+    - name: Google
+      url: https://www.google.com
+
+    - name: Aiven
+      url: https://aiven.io/
+      regex: <div id="aiven-values".*?>(.*)<\/div>
+
+
+kafka:
+    address: localhost:9092
+    topic: check-website
+    partition: 0
