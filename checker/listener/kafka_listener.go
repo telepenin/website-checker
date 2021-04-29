@@ -4,17 +4,16 @@ import (
 	"context"
 	"fmt"
 	"github.com/segmentio/kafka-go"
-	"github.com/telepenin/website-checker/checker/checker"
-	config "github.com/telepenin/website-checker/config/src"
+	"github.com/telepenin/website-checker/shared"
 	"log"
 )
 
 type KafkaListener struct {
-	Config config.Kafka
+	Config shared.Kafka
 	Conn   *kafka.Conn
 }
 
-func Init(config config.Kafka) (*KafkaListener, error) {
+func Init(config shared.Kafka) (*KafkaListener, error) {
 	conn, err := kafka.DialLeader(context.Background(), "tcp",
 		config.Address, config.Topic, config.Partition)
 	if err != nil {
@@ -31,7 +30,7 @@ func (l *KafkaListener) Close() error {
 	return l.Conn.Close()
 }
 
-func (l *KafkaListener) Process(resp *checker.Response) error {
+func (l *KafkaListener) Process(resp *shared.Response) error {
 	b, err := resp.ToJson()
 	if err != nil {
 		return err

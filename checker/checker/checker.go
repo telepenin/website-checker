@@ -1,9 +1,8 @@
 package checker
 
 import (
-	"encoding/json"
 	"fmt"
-	config "github.com/telepenin/website-checker/config/src"
+	"github.com/telepenin/website-checker/shared"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -11,15 +10,11 @@ import (
 	"time"
 )
 
-type Processors []func(resp *Response) error
+type Processors []func(resp *shared.Response) error
 
 type Checker struct {
-	Config     config.Checker
+	Config     shared.Checker
 	Processors Processors
-}
-
-func (r *Response) ToJson() ([]byte, error) {
-	return json.Marshal(r)
 }
 
 func (c *Checker) Run() {
@@ -35,7 +30,7 @@ func (c *Checker) Run() {
 	}
 }
 
-func (c *Checker) check(site config.Website) {
+func (c *Checker) check(site shared.Website) {
 	client := http.Client{
 		Timeout: time.Second * time.Duration(c.Config.Timeout),
 	}
@@ -57,7 +52,7 @@ func getContent(regex string, body []byte) [][]byte {
 	return regexp.MustCompile(regex).FindAll(body, -1)
 }
 
-func fetchWebsite(client *http.Client, site config.Website) (*Response, error) {
+func fetchWebsite(client *http.Client, site shared.Website) (*shared.Response, error) {
 	// for more complex metrics you may use https://golang.org/pkg/net/http/httptrace/
 	// or if you need to exclude dns resolving, writing the request, reading the response, etc.
 	start := time.Now()
@@ -73,12 +68,12 @@ func fetchWebsite(client *http.Client, site config.Website) (*Response, error) {
 		log.Fatalln(err)
 	}
 
-	var content []byte
+	var content [][]byte
 	if site.Regex != "" {
 		content = getContent(site.Regex, bytes)
 	}
 
-	return &config.Response{
+	return &shared.Response{
 		Website:  site,
 		Code:     resp.StatusCode,
 		Duration: elapsed,

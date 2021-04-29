@@ -24,8 +24,11 @@ github.com/segmentio/kafka-go v0.4.15/go.mod h1:19+Eg7KwrNKy/PFhiIthEPkO8k+ac7/Z
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd0=
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
-github.com/telepenin/website-checker/config v0.0.3-0.20210429112558-6767a0239f4e h1:DV84ulR38GgTSyKeTky/Iz29yWIxWTejKjf/IGD5BlM=
-github.com/telepenin/website-checker/config v0.0.3-0.20210429112558-6767a0239f4e/go.mod h1:ZkP56rkraRXVgDHRM77KVdVgyw22Hew5QL1huU230w0=
+github.com/telepenin/website-checker v0.0.1 h1:8AyppiJdI9+nP/l7UVhrmSaDZ6wkpyOhJ2b9F+3/Jcg=
+github.com/telepenin/website-checker/config v0.0.2 h1:L+WqRSjiuHXBe1rK/2IGfEIaMcrvxeH4Nv0I1Zhexeo=
+github.com/telepenin/website-checker/config v0.0.2/go.mod h1:ZkP56rkraRXVgDHRM77KVdVgyw22Hew5QL1huU230w0=
+github.com/telepenin/website-checker/shared v0.0.0-20210429132156-afaf0f8fc140 h1:wwQUjYEo7uMKj1no2DcWcYcA3t1ki6UZn4Hy7WvIMNQ=
+github.com/telepenin/website-checker/shared v0.0.0-20210429132156-afaf0f8fc140/go.mod h1:L+cAK7giB3GlHf8NsYM8JdDHdS84TAWdPt0ky0VZGW4=
 github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c h1:u40Z8hqBAAQyv+vATcGgV0YCnDjqSL7/q/JyPhhJSPk=
 github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c/go.mod h1:lB8K/P019DLNhemzwFU4jHLhdvlE6uDZjXFejJXr49I=
 github.com/xdg/stringprep v1.0.0 h1:d9X0esnoa3dFsV0FG35rAT0RIhYFlPq7MiP+DW89La0=
