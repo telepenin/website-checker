@@ -11,8 +11,7 @@ checker:
       url: https://aiven.io/
       regex: <div id="aiven-values".*?>(.*)<\/div>
 
-
 kafka:
     address: localhost:9092
-    topic: check-website
+    topic: check-website-1
     partition: 0

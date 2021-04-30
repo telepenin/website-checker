@@ -1,5 +1,7 @@
 .EXPORT_ALL_VARIABLES:
 
+CONFIG=../example/config.yaml
+
 # Run go fmt against code
 fmt:
 	go fmt ./...

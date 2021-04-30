@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/segmentio/kafka-go"
 	"github.com/telepenin/website-checker/shared"
-	"log"
 )
 
 type KafkaListener struct {
@@ -42,7 +41,6 @@ func (l *KafkaListener) Process(resp *shared.Response) error {
 	if err != nil {
 		return err
 	}
-	log.Printf("data was sent: %v", string(b))
 	return nil
 
 }

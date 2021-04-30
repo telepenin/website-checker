@@ -53,8 +53,7 @@ func getContent(regex string, body []byte) [][]byte {
 }
 
 func fetchWebsite(client *http.Client, site shared.Website) (*shared.Response, error) {
-	// for more complex metrics you may use https://golang.org/pkg/net/http/httptrace/
-	// or if you need to exclude dns resolving, writing the request, reading the response, etc.
+	// for more granular metrics you may use https://golang.org/pkg/net/http/httptrace/
 	start := time.Now()
 	resp, err := client.Get(site.Url)
 	elapsed := time.Since(start).Seconds()

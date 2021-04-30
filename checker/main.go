@@ -14,6 +14,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	stdoutListener := &listener.StdoutListener{}
+
 	log.Println("init kafka listener")
 	kafkaListener, err := listener.Init(cfg.Kafka)
 	if err != nil {
@@ -25,6 +27,7 @@ func main() {
 		Config: cfg.Checker,
 		Processors: chckr.Processors{
 			kafkaListener.Process,
+			stdoutListener.Process,
 		},
 	}
 
